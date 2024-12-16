@@ -1,4 +1,4 @@
-# Unicorn Follower Api
+# Unicorn Follower UI
 
 ## Project Description
 This is a ReactJS project designed to create an interactive and dynamic user interface. Below are the steps to set up the development environment, run the project locally, and build it for production.
