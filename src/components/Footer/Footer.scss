@@ -1,0 +1,25 @@
+.footer {
+    background-color: #0f0f1e;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    .contacts, .socials, .sponsors {
+      flex: 1;
+      padding: 0 1rem;
+
+      p {
+        margin: 0.5rem 0;
+        color: #66FCF1;
+      }
+
+      a {
+        color: #00ffdd;
+        text-decoration: none;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+}

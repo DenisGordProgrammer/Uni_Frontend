@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0f0f1e;
+
+    .logo {
+      color: #00ffdd;
+      font-size: 1.5rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+
+        &:hover {
+          color: #00ffdd;
+        }
+      }
+    }
+
+    .login-btn {
+      padding: 0.5rem 1rem;
+      background-color: #00ffdd;
+      border: none;
+      color: #1a1a2e;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ffffff;
+      }
+    }
+  }
