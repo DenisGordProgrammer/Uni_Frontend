@@ -1,5 +1,4 @@
 import "./Home.scss";
-import Navigation from '../../components/Navigation/Navigation'
 import Tournaments from '../../components/Tournaments/Tournaments';
 import Matches from '../../components/Matches/Matches'
 
@@ -16,7 +15,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Navigation />
       <Matches matches={matches} />
       <Tournaments tournaments={tournaments} />
     </div>
