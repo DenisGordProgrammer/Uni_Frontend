@@ -1,17 +1,22 @@
 import { NavLink } from 'react-router-dom';
 import './Navigation.scss';
+import logo from '../../../logo.png'
 const Navigation = () => {
     return (
       <header className="header">
-        <div className="logo">FOLLOWER</div>
+        <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>
+        <img src={logo} alt='Logo' />
+        </NavLink>
         <nav className="nav">
-          <NavLink to="/home" activeClassName="active-link">Головна</NavLink>
-          <NavLink to="/tournaments" activeClassName="active-link">Турніри</NavLink>
-          <NavLink to="/teams" activeClassName="active-link">Команди</NavLink>
-          <NavLink to="/players" activeClassName="active-link">Гравці</NavLink>
-          <NavLink to="/rating" activeClassName="active-link">Рейтинг</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>Головна</NavLink>
+          <NavLink to="/tournaments" className={({ isActive }) => isActive ? "active-link" : ""}>Турніри</NavLink>
+          <NavLink to="/teams" className={({ isActive }) => isActive ? "active-link" : ""}>Команди</NavLink>
+          <NavLink to="/players" className={({ isActive }) => isActive ? "active-link" : ""}>Гравці</NavLink>
+          <NavLink to="/rating" className={({ isActive }) => isActive ? "active-link" : ""}>Рейтинг</NavLink>
         </nav>
+        <NavLink to="/login" className={({ isActive }) => isActive ? "active-link" : ""}>
         <button className="login-btn">Login</button>
+        </NavLink>
       </header>
     );
   };
