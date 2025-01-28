@@ -6,7 +6,7 @@ import logo from '../../../logo.png'
 const Navigation = () => {
   return (
     <header className="header">
-      <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>
+      <NavLink to="/" className={({ isActive }) => cn({ "active-link": isActive })}>
         <img src={logo} alt='Logo' />
       </NavLink>
       <nav className="nav">
@@ -26,7 +26,7 @@ const Navigation = () => {
           Рейтинг
         </NavLink>
       </nav>
-      <NavLink to="/login" className={({ isActive }) => isActive ? "active-link" : ""}>
+      <NavLink to="/login" className={({ isActive }) => cn({ "active-link": isActive })}>
         <button className="login-btn">Login</button>
       </NavLink>
     </header>
