@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import './Navigation.scss';
-import logo from '../../../logo.png'
+import logo from '../icons/logo.svg'
 
 const Navigation = () => {
   return (
