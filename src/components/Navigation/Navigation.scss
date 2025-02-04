@@ -1,38 +1,66 @@
 .header {
+  width: 100%;
+
+  .links-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     padding: 1rem 2rem;
-    background-color: #0f0f1e;
+    box-sizing: border-box;
 
-    .logo {
-      color: #00ffdd;
-      font-size: 1.5rem;
+    svg {
+      width: 9.375rem;
+      height: auto;
+      flex-shrink: 0;
     }
 
     .nav {
       display: flex;
       gap: 1rem;
+      background: #0B0C10;
+      border: 1px solid #45A29E;
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      max-width: 100%;
+      overflow-x: auto;
 
       a {
-        color: #ffffff;
+        color: #00ffdd;
         text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: 0.3s ease;
 
         &:hover {
-          color: #00ffdd;
+          color: #ffffff;
         }
+      }
+
+      .active-link {
+        background-color: #1E262F;
+        border: 2px solid #45A29E;
+        border-radius: 12px;
+        padding: 0.5rem 0.3rem;
+        color: #00ffdd;
+        font-weight: bold;
       }
     }
 
     .login-btn {
-      padding: 0.5rem 1rem;
-      background-color: #00ffdd;
-      border: none;
-      color: #1a1a2e;
+      padding: 1rem 1rem;
+      background: #0B0C10;
+      border: 1px solid #45A29E;
+      color: #00ffdd;
+      border-radius: 8px;
       cursor: pointer;
+      transition: 0.3s;
+      flex-shrink: 0;
 
       &:hover {
-        background-color: #ffffff;
+        background-color: #00ffdd;
+        color: #1E262F;
       }
     }
   }
+}
