@@ -1,13 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import './Navigation.scss';
-import logo from '../icons/logo.svg'
+import Logo from '../icons/AppLogo';
 
 const Navigation = () => {
   return (
     <header className="header">
+      <div className='container links-container'>
       <NavLink to="/" className={({ isActive }) => cn({ "active-link": isActive })}>
-        <img src={logo} alt='Logo' />
+        <Logo />
       </NavLink>
       <nav className="nav">
         <NavLink to="/" className={({ isActive }) => cn({ "active-link": isActive })}>
@@ -29,6 +30,7 @@ const Navigation = () => {
       <NavLink to="/login" className={({ isActive }) => cn({ "active-link": isActive })}>
         <button className="login-btn">Login</button>
       </NavLink>
+      </div>
     </header>
   );
 };

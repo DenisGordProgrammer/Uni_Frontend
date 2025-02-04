@@ -1,7 +1,6 @@
 import './Matches.scss'
 const Matches = ({ matches }) => {
     return (
-        
       <section className="matches-today">
         <h2>Матчі Сьогодні</h2>
         <div className="matches">

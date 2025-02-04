@@ -1,15 +1,13 @@
 body {
-  display: flex;
-  justify-content: center;
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #1E262F;
   color: #00ffdd;
 }
 
-.wrapper {
+.container {
   width: 100%;
   max-width: 1440px;
-  padding: 0 20px;
+  margin: 0 auto;
 }
   
