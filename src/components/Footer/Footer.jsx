@@ -1,10 +1,10 @@
 import "./Footer.scss";
-import tg from '../icons/tgLogo.png'
-import insta from '../icons/instaLogo.png'
-import twitter from '../icons/twitLogo.png'
-import twitch from '../icons/twitchLogo.png'
-import hltv from '../icons/hltvLogo.png'
-import uesf from '../icons/uesfLogo.png'
+import tg from '../../../src/assets/images/tgLogo.png'
+import insta from '../../../src/assets/images/instaLogo.png'
+import twitter from '../../../src/assets/images/twitLogo.png'
+import twitch from '../../../src/assets/images/twitchLogo.png'
+import hltv from '../../../src/assets/images/hltvLogo.png'
+import uesf from '../../../src/assets/images/uesfLogo.png'
 
 const Footer = () => {
   return (
