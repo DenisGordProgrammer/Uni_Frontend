@@ -22,15 +22,45 @@
   .slick-slider {
 
     .slick-prev {
-      margin-left: 2rem;
+      background-color: transparent;
+      border: 2px solid #45A29E;
+      height: 100%;
+      width: 4rem;
+      margin-left: 2.5rem;
+      border-radius: 15px 0px 0px 15px;
       color: #66FCF1;
       z-index: 10;
+      transition: 300ms;
+      &:hover {
+        background-color: #1E262F;
+      }
+    &:before{
+        content: "<";
+        color: #66FCF1;
+        font-size: 2rem;
+        font-weight: bold;
+      }
     }
 
     .slick-next {
-      margin-right: 2rem;
+      background-color: transparent;
+      border: 2px solid #45A29E;
+      height: 100%;
+      width: 4rem;
+      margin-right: 2.5rem;
+      border-radius: 0px 15px 15px 0px;
       color: #66FCF1;
       z-index: 10;
+      transition: 300ms;
+      &:hover {
+        background-color: #1E262F;
+      }
+    &:before{
+        content: ">";
+        color: #66FCF1;
+        font-size: 2rem;
+        font-weight: bold;
+      }
     }
 
     .slick-slide {
