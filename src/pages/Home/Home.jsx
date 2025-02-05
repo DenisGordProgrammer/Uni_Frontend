@@ -1,11 +1,16 @@
 import "./Home.scss";
 import Tournaments from '../../components/Tournaments/Tournaments';
-import Matches from '../../components/Matches/Matches'
+import MatchesToday from '../../components/Matches/MatchesToday'
+import { navi, faze, furia, g2, liquid, heroic } from '../../assets/images/logos';
 
 const Home = () => {
   const matches = [
-    { team1: "NaVi", team2: "FaZe", time: "8:00" },
-    { team1: "G2", team2: "Heroic", time: "12:00" },
+    { team1: "NAVI", team2: "Faze", time: "8:00", logo1: navi, logo2: faze },
+    { team1: "Furia", team2: "G2", time: "10:00", logo1: furia, logo2: g2 },
+    { team1: "Liquid", team2: "Heroic", time: "12:00", logo1: liquid, logo2: heroic },
+    { team1: "NAVI", team2: "Faze", time: "14:00", logo1: navi, logo2: faze },
+    { team1: "Furia", team2: "G2", time: "16:00", logo1: furia, logo2: g2 },
+    { team1: "Liquid", team2: "Heroic", time: "18:00", logo1: liquid, logo2: heroic },
   ];
 
   const tournaments = [
@@ -14,8 +19,8 @@ const Home = () => {
   ];
 
   return (
-    <div className="home">
-      <Matches matches={matches} />
+    <div className="home container">
+      <MatchesToday matches={matches} />
       <Tournaments tournaments={tournaments} />
     </div>
   );
