@@ -1,7 +1,8 @@
 import "./Home.scss";
 import Tournaments from '../../components/Tournaments/Tournaments';
 import MatchesToday from '../../components/Matches/MatchesToday'
-import { navi, faze, furia, g2, liquid, heroic } from '../../assets/images/logos';
+import { navi, faze, furia, g2, liquid, heroic, newsBg } from '../../assets/images/logos';
+import NewsSlider from "../../components/NewsSlider/NewsSlider";
 
 const Home = () => {
   const matches = [
@@ -18,9 +19,15 @@ const Home = () => {
     { name: "Tipsport MCR 2024", date: "22.11-24.11", prize: "$65,000", teams: 4 },
   ];
 
+  const newsSlides = [
+    {from: "hltv.org", bg: newsBg, title: "Device пропусте мейджор зза проблем зі здоров'ям", text: "На цьому мейджорі замість Device буде грати bro, замість нього зіграє Каспер Меллер"},
+    {from: "somewhere.gg", bg: newsBg, title: "Розпочався другий сезон прем’єр-режиму, пошук матчів відновлено.", text: "Кожен гравець, який здобув рейтинг CS упродовж першого сезону, отримає пам’ятну медаль першого сезону, що містить детальну сезонну статистику."},
+    {from: "wikipedia.com", bg: newsBg, title: "Оновлення радару", text: "Додано нову опцію динамічного масштабування радара, яка збільшує чи зменшує його, щоби включати ваших товаришів по команді, бомбу та інші позначувані елементи."},
+  ]
   return (
     <div className="home container">
       <MatchesToday matches={matches} />
+      <NewsSlider newsSlides={newsSlides} />
       <Tournaments tournaments={tournaments} />
     </div>
   );

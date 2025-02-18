@@ -1,0 +1,128 @@
+.news-slider {
+    flex-direction: row;
+    margin: auto;
+    padding: 2rem;
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    a {
+        text-decoration: none;
+    }
+
+    small {
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.5rem;
+        font-weight: bold;
+        color: #66FCF1;
+        font-size: 1.25rem;
+    }
+
+    .slider {
+        border-radius: 0.325rem;
+        border: 3px solid #45A29E;
+        height: 768px;
+    }
+
+    .slide {
+        position: relative;
+        color: white;
+        background-image: url("../../assets/images/Device.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 48rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: start;
+        color: white;
+        border-radius: 8px;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        h3 {
+            position: relative;
+            z-index: 1;
+            font-size: 3rem;
+            font-weight: 700;
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            margin: 0 0 0.5rem 2rem;
+            width: 80%;
+        }
+
+        p {
+            color: #C5C6C7;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 5px 0;
+            z-index: 1;
+            position: relative;
+            margin-bottom: 3rem;
+            margin-left: 2rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            width: 50%;
+        }
+
+        small {
+            font-size: 1.25rem;
+            color: #00ffdd;
+            font-weight: 400 bold;
+        }
+
+    }
+
+    .slick-prev {
+        background-color: #0B0C10;
+        border: 1px solid #45A29E;
+        margin-left: 2.5rem;
+        height: 4rem;
+        width: 4rem;
+        z-index: 2;
+        border-radius: 50%;
+
+        &:before {
+
+            content: "<";
+            font-size: 2rem;
+            font-weight: bold;
+            color: #66FCF1;
+        }
+    }
+
+    .slick-next {
+        background-color: #0B0C10;
+        border: 1px solid #45A29E;
+        margin-right: 2.5rem;
+        height: 4rem;
+        width: 4rem;
+        z-index: 2;
+        border-radius: 50%;
+
+        &:before {
+
+            content: ">";
+            font-size: 2rem;
+            vertical-align: middle;
+            font-weight: bold;
+            color: #66FCF1;
+        }
+    }
+}
