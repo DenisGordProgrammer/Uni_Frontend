@@ -13,13 +13,14 @@ const MatchesToday = ({ matches }) => {
     slidesToScroll: 1,
     arrows: true,
   };
+
   return (
     <section className="matches-today">
       <h2>Матчі Сьогодні</h2>
       <div className="slider">
         <Slider {...settings}>
           {matches.map((match) => (
-            <a href="/test" key={match.title}>
+            <a href="/test" key={`${match.team1}-${match.team}-${match.time}`}>
               <div className="match-card">
                 <img src={match.logo1} alt={match.team1} className="team-logo" />
                 <div className="time">{match.time}</div>
