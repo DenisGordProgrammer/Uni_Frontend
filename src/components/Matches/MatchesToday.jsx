@@ -18,9 +18,9 @@ const MatchesToday = ({ matches }) => {
       <h2>Матчі Сьогодні</h2>
       <div className="slider">
         <Slider {...settings}>
-          {matches.map((match, index) => (
-            <a href="/test">
-              <div key={index} className="match-card">
+          {matches.map((match) => (
+            <a href="/test" key={match.title}>
+              <div className="match-card">
                 <img src={match.logo1} alt={match.team1} className="team-logo" />
                 <div className="time">{match.time}</div>
                 <img src={match.logo2} alt={match.team2} className="team-logo" />
