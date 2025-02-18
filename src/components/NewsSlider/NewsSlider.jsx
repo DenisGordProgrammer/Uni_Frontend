@@ -11,19 +11,19 @@ const NewsSlider = ({ newsSlides }) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
-        
+
     };
     return (
         <section className="news-slider">
             <div className="slider">
                 <Slider {...settings}>
                     {newsSlides.map((slide) => (
-                        <a href = "/test2" key={slide.title}>
-                        <div className="slide">
-                        <h3>{slide.title}</h3>
-                        <p>{slide.text}</p>
-                        <small>Taken from {slide.from}</small>
-                        </div>
+                        <a href="/test2" key={slide.title}>
+                            <div className="slide">
+                                <h3>{slide.title}</h3>
+                                <p>{slide.text}</p>
+                                <small>Taken from {slide.from}</small>
+                            </div>
                         </a>
                     ))}
                 </Slider>
