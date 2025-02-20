@@ -1,3 +1,19 @@
 .home {
-  padding: 0 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+
+  .matches-vidget {
+    width: 100%;
+  }
+
+  .news-vidget {
+    width: calc(65% - 1rem);
+  }
+
+  .players-vidget {
+    width: calc(35% - 1rem);
+  }
 }

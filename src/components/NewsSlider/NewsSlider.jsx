@@ -2,7 +2,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './NewsSlider.scss'
-
 const NewsSlider = ({ newsSlides }) => {
     const settings = {
         dots: false,
@@ -19,7 +18,7 @@ const NewsSlider = ({ newsSlides }) => {
                 <Slider {...settings}>
                     {newsSlides.map((slide) => (
                         <a href="/test2" key={slide.title}>
-                            <div className="slide">
+                            <div className="slide" style={{ backgroundImage: `url(${slide.bg})` }}>
                                 <h3>{slide.title}</h3>
                                 <p>{slide.text}</p>
                                 <small>Taken from {slide.from}</small>
