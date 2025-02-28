@@ -1,21 +1,40 @@
-import './Tournaments.scss'
-
+import './Tournaments.scss';
+import navi from '../../assets/images/naviLogo.png'
 const Tournaments = ({ tournaments }) => {
-    return(
-        <section className="upcoming-tournaments">
-        <h2>Майбутні турніри</h2>
-        <ul>
-          {tournaments.map((tournament, index) => (
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('uk-UA', { day: '2-digit', month: '2-digit' });
+  };
+
+
+  const sortedTournaments = [...tournaments].sort(
+    (a, b) => new Date(a.startDate) - new Date(b.startDate)
+  );
+
+  return (
+    <section className="upcoming-tournaments">
+      <h2>Майбутні турніри</h2>
+      <ul>
+      {sortedTournaments.map((tournament, index) => {
+          const formattedPrize = Math.ceil(tournament.prizePool).toLocaleString('en-US');
+
+          return (
             <li key={index} className="tournament">
-              <span>{tournament.date}</span>
-              <span>{tournament.name}</span>
-              <span>{tournament.prize}</span>
-              <span>Команд: {tournament.teams}</span>
+              <span>{formatDate(tournament.startDate)} - {formatDate(tournament.endDate)}</span>
+              <img 
+                src={navi || ''} 
+                alt={tournament.tournamentName && navi || 'No logo'} 
+                className="tournament-logo" 
+              />
+              <span>{tournament.tournamentName || 'No name'}</span>
+              <span>${formattedPrize || 'N/A'}</span>
+              <span>Команд: {tournament.teams || 'N/A'}</span>
             </li>
-          ))}
-        </ul>
-      </section>
-    );
+          );
+        })}
+      </ul>
+    </section>
+  );
 };
 
 export default Tournaments;

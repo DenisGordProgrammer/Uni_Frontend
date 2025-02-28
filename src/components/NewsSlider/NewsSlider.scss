@@ -19,7 +19,7 @@
 
     .slider {
         border-radius: 0.325rem;
-        border: 3px solid #45A29E;
+        border: .1875rem solid #45A29E;
     }
 
     .slide {
@@ -35,7 +35,7 @@
         justify-content: flex-end;
         align-items: start;
         color: white;
-        border-radius: 8px;
+        border-radius: .5rem;
         height: 35rem;
 
         &::before {
@@ -64,7 +64,7 @@
             color: #C5C6C7;
             font-size: 1.5rem;
             font-weight: 700;
-            margin: 5px 0;
+            margin: .3125rem 0;
             z-index: 1;
             position: relative;
             margin-bottom: 3rem;
@@ -86,7 +86,7 @@
 
     .slick-prev {
         background-color: #0B0C10;
-        border: 1px solid #45A29E;
+        border: .0625rem solid #45A29E;
         margin-left: 2.5rem;
         height: 4rem;
         width: 4rem;
@@ -104,7 +104,7 @@
 
     .slick-next {
         background-color: #0B0C10;
-        border: 1px solid #45A29E;
+        border: .0625rem solid #45A29E;
         margin-right: 2.5rem;
         height: 4rem;
         width: 4rem;
