@@ -17,11 +17,6 @@ const Home = () => {
     { team1: "Liquid", team2: "Heroic", time: "18:00", logo1: liquid, logo2: heroic },
   ];
 
-  const tournaments = [
-    { name: "Майстер Ліга", date: "16.11-17.11", prize: "$10,800", teams: 4 },
-    { name: "Tipsport MCR 2024", date: "22.11-24.11", prize: "$65,000", teams: 4 },
-  ];
-
   const newsSlides = [
     { from: "hltv.org", bg: newsBg, title: "Device пропусте мейджор зза проблем зі здоров'ям", text: "На цьому мейджорі замість Device буде грати bro, замість нього зіграє Каспер Меллер" },
     { from: "somewhere.gg", bg: newsBg, title: "Розпочався другий сезон прем’єр-режиму, пошук матчів відновлено.", text: "Кожен гравець, який здобув рейтинг CS упродовж першого сезону, отримає пам’ятну медаль першого сезону, що містить детальну сезонну статистику." },
@@ -50,9 +45,6 @@ const Home = () => {
     "tournamentDate": null, "tournamentResults": []
   },
   { "tournamentId": 14900, "tournamentName": "WCG Asian Championship 2010", "organizer": { "organizer1": "World Cyber Games" }, "startDate": "2010-07-09T00:00:00", "endDate": "2010-07-11T00:00:00", "location": { "country1": "sg", "city1": "Singapore", "region1": "Southeast Asia" }, "prizePool": 6519.02, "tournamentGame": "dota", "tournamentDate": null, "tournamentResults": [] }, { "tournamentId": 14901, "tournamentName": "CCT Series 7", "organizer": { "organizer2": "GRID", "organizer1": "GAM3RS X" }, "startDate": "2025-02-25T00:00:00", "endDate": "2025-03-07T00:00:00", "location": { "region1": "Europe", "region2": "CIS" }, "prizePool": 50000, "tournamentGame": "dota2", "tournamentDate": null, "tournamentResults": [] }, { "tournamentId": 14902, "tournamentName": "Universal League Season 2", "organizer": { "organizer1": "Nitro Studios" }, "startDate": "2025-02-27T00:00:00", "endDate": "2025-03-15T00:00:00", "location": { "region1": "South America" }, "prizePool": 10000, "tournamentGame": "dota2", "tournamentDate": null, "tournamentResults": [] }, { "tournamentId": 14903, "tournamentName": "ACL X ESL Challenger China", "organizer": { "organizer2": "ESL Gaming", "organizer1": "Hero Esports" }, "startDate": "2025-05-01T00:00:00", "endDate": "2025-05-03T00:00:00", "location": { "country1": "cn", "city1": "Shanghai", "region1": "China" }, "prizePool": 100000, "tournamentGame": "dota2", "tournamentDate": null, "tournamentResults": [] }])
-  console.log(stateTournaments)
-  console.log(stateTournaments[0])
-  console.log(stateTournaments[0].endDate, stateTournaments[0].tournamentGame)
   
   useEffect(() => {
     const fetchData = async () => {
@@ -73,7 +65,7 @@ const Home = () => {
       <div className="matches-widget"><MatchesToday matches={matches} /></div>
       <div className="news-widget"><NewsSlider newsSlides={newsSlides} /></div>
       <div className="players-widget"><PlayerList players={players} /></div>
-      <Tournaments tournaments={stateTournaments} />
+      <div className="tournaments"><Tournaments tournaments={stateTournaments} /></div>
     </div>
   );
 };
