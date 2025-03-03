@@ -12,7 +12,7 @@ const Tournaments = ({ tournaments }) => {
   );
 
   const formatPrize = (prize) => {
-    return prize ? Math.ceil(prize).toLocaleString('en-US') : 'N/A';
+    return prize ? `$${Math.ceil(prize).toLocaleString('en-US')}` : 'N/A';
   };
 
   return (
@@ -28,7 +28,7 @@ const Tournaments = ({ tournaments }) => {
               className="tournament-logo"
             />
             <span>{tournament.tournamentName || 'No name'}</span>
-            <span>${formatPrize(tournament.prizePool) || 'N/A'}</span>
+            <span>{formatPrize(tournament.prizePool) || 'N/A'}</span>
             <span>Команд: {tournament.teams || 'N/A'}</span>
           </li>
         ))}
