@@ -13,5 +13,7 @@ import kyosuke from './kyosuke.png';
 import INS from './INS.png';
 import Xantares from './Xantares.png';
 import malbsMd from './g2Logo.png';
-
-export { navi, faze, furia, g2, liquid, heroic, newsBg, Zywoo, m0NESY, donk, tomaszin, kyosuke, INS, Xantares, malbsMd };
+import mouz from './mouz.jpg';
+import mongolz from './mongolz.png';
+import astralis from './astralis.jpg';
+export { navi, faze, furia, g2, liquid, heroic, newsBg, Zywoo, m0NESY, donk, tomaszin, kyosuke, INS, Xantares, malbsMd, mouz, mongolz, astralis };
