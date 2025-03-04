@@ -11,29 +11,27 @@ const Tournaments = ({ tournaments }) => {
     (a, b) => new Date(a.startDate) - new Date(b.startDate)
   );
 
+  const formatPrize = (prize) => {
+    return prize ? `$${Math.ceil(prize).toLocaleString('en-US')}` : 'N/A';
+  };
+
   return (
     <section className="upcoming-tournaments">
       <h2>Майбутні турніри</h2>
       <ul>
-      {sortedTournaments.map((tournament, index) => {
-          const formattedPrize = Math.ceil(tournament.prizePool).toLocaleString('en-US');
-
-          return (
-            <li key={index}>
-              <a href='/test3' className="tournament">
-              <span>{formatDate(tournament.startDate)} - {formatDate(tournament.endDate)}</span>
-              <img 
-                src={navi || ''} 
-                alt={tournament.tournamentName && navi || 'No logo'} 
-                className="tournament-logo" 
-              />
-              <span>{tournament.tournamentName || 'No name'}</span>
-              <span>${formattedPrize || 'N/A'}</span>
-              <span>Команд: {tournament.teams || 'N/A'}</span>
-              </a>
-            </li>
-          );
-        })}
+        {sortedTournaments.map((tournament, index) => (
+          <li key={index} className="tournament">
+            <span>{formatDate(tournament.startDate)} - {formatDate(tournament.endDate)}</span>
+            <img
+              src={navi || ''}
+              alt={tournament.tournamentName && navi || 'No logo'}
+              className="tournament-logo"
+            />
+            <span>{tournament.tournamentName || 'No name'}</span>
+            <span>{formatPrize(tournament.prizePool) || 'N/A'}</span>
+            <span>Команд: {tournament.teams || 'N/A'}</span>
+          </li>
+        ))}
       </ul>
     </section>
   );
