@@ -20,7 +20,7 @@ const MatchesToday = ({ matches }) => {
       <div className="slider">
         <Slider {...settings}>
           {matches.map((match) => (
-            <a href="/test" key={`${match.team1}-${match.team}-${match.time}`}>
+            <a href="/Match" key={`${match.team1}-${match.team}-${match.time}`}>
               <div className="match-card">
                 <img src={match.logo1} alt={match.team1} className="team-logo" />
                 <div className="time">{match.time}</div>

@@ -20,7 +20,7 @@ const Tournaments = ({ tournaments }) => {
 
           return (
             <li key={index}>
-              <a href='/test3' className="tournament">
+              <a href='/tournaments' className="tournament">
               <span>{formatDate(tournament.startDate)} - {formatDate(tournament.endDate)}</span>
               <img 
                 src={navi || ''} 

@@ -18,15 +18,15 @@ const Footer = () => {
         </div>
         <div className="socials">
           <div className="title"><p>Ми у соціальних мережах:</p></div>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Telegram <img src={tg} alt="telegram" /></a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Instagram <img src={insta} alt="instagram" /></a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Twitter<img src={twitter} alt="twitter" /></a>
+          <a href="https://t.me/hltvtelegram">Telegram <img src={tg} alt="telegram" /></a>
+          <a href="https://www.instagram.com/hltvorg/">Instagram <img src={insta} alt="instagram" /></a>
+          <a href="https://www.twitter.com/HLTVorg">Twitter<img src={twitter} alt="twitter" /></a>
         </div>
         <div className="sponsors">
           <div className="title"><p>Інформацію взято з:</p></div>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Twitch <img src={twitch} alt="twitch" /></a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Hltv <img src={hltv} alt="hltw" /></a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">UESF <img src={uesf} alt="telegram" /></a>
+          <a href="hhttps://www.twitch.tv/hltvorg">Twitch <img src={twitch} alt="twitch" /></a>
+          <a href="https://www.hltv.org">Hltv <img src={hltv} alt="hltw" /></a>
+          <a href="https://uesf.org.ua">UESF <img src={uesf} alt="UESF" /></a>
         </div>
       </div>
     </footer>

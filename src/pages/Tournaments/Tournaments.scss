@@ -1,0 +1,88 @@
+.tournamentsPage {
+    padding: 2rem;
+}  
+.page-upcoming-tournaments {
+    padding: 0rem 10rem 1.25rem 10rem;
+    background-color: #0B0C10;
+    border: .0625rem solid #45A29E;
+    color: #66FCF1;
+  
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .9375rem;
+      max-height: 45em; 
+      overflow-y: auto; 
+      scrollbar-width: thin;  
+      scrollbar-color: #45A29E transparent; 
+    }
+    .search-container {
+        display: flex;
+        justify-content: center;
+        margin: 4rem 0 2rem 0;
+        
+
+        input {
+            width: 100%;
+            padding: .625rem .9375rem;
+            font-size: 1rem;
+            border: .0625rem solid #45A29E;
+            border-radius: 1.5625rem;
+            outline: none;
+            background: transparent;
+            color: #45A29E;
+            box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.2s ease-in-out;
+            &:hover, &:focus{
+              box-shadow: 0 .375rem .75rem rgba(69, 162, 158, 0.6); 
+            }
+            &::placeholder{
+                color: #45A29E;
+            }
+        }
+    }
+    .page-tournament {
+      background-color: #1E262F;
+      text-decoration: none;
+      color: #66FCF1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .9375rem;
+      border: .0625rem solid #45A29E;
+      border-radius: .625rem;
+      box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.2s ease-in-out;
+      &:hover {
+        box-shadow: 0 .375rem .75rem rgba(69, 162, 158, 0.6); 
+      }
+      &:visited {
+        color: #66FCF1;
+      }
+  
+      span {
+        font-size: 1.5rem;
+        font-weight: 400;
+        display: block; 
+        max-width: 12.5rem;
+        overflow-wrap: break-word; 
+        word-break: break-word; 
+      }
+      
+      .page-tournament-logo {
+        width: 4rem;
+        height: 4rem;
+        border-radius: .3125rem;
+        object-fit: contain;
+      }
+    }
+  }
+  
