@@ -1,12 +1,12 @@
-const SearchBar = ({ searchQuery, setSearchQuery }) => {
+const SearchBar = ({ value, onChange  }) => {
     return (
         <div className="search-container">
             <input
                 id="search"
                 type="text"
                 placeholder="Пошук..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                value={value}
+                onChange={(e) => onChange (e.target.value)}
             />
         </div>
     );
