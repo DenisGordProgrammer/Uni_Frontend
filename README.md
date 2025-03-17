@@ -1,6 +1,7 @@
 # Unicorn Follower UI
 
 ## Project Description
+
 This is a ReactJS project designed to create an interactive and dynamic user interface. Below are the steps to set up the development environment, run the project locally, and build it for production.
 
 ---
@@ -21,10 +22,12 @@ This is a ReactJS project designed to create an interactive and dynamic user int
 ### Windows/macOS
 
 1. **Install Node.js**:
+
    - Download the latest LTS version of Node.js from the [official website](https://nodejs.org/).
    - Install Node.js, which includes npm.
 
 2. **Install Git**:
+
    - Download and install Git from the [official website](https://git-scm.com/).
 
 3. **Verify installation**:
@@ -39,19 +42,22 @@ This is a ReactJS project designed to create an interactive and dynamic user int
 ## How to Run the Project Locally
 
 1. **Clone the repository**:
+
    ```bash
    git clone <repository_URL>
    cd <project_folder_name>
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**:
+
    ```bash
-   npm start
+   npm run dev
    ```
 
 4. **Open the application in a browser**:
@@ -62,6 +68,7 @@ This is a ReactJS project designed to create an interactive and dynamic user int
 ## How to Build the Project for Production
 
 1. **Run the build command**:
+
    ```bash
    npm run build
    ```

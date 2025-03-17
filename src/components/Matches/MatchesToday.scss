@@ -1,0 +1,115 @@
+.matches-today {
+  width: 100%;
+  border-radius: .75rem;
+
+  h2 {
+    margin: 0.15rem 1.1rem;
+    font-weight: normal;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .slider {
+    padding: 0.5rem 0rem;
+    background-color: #0B0C10;
+    border: .0625rem solid #45A29E;
+    border-radius: 1.25rem;
+  }
+
+  .slick-slider {
+
+    .slick-prev {
+      background-color: transparent;
+      border: .125rem solid #45A29E;
+      height: 100%;
+      width: 4rem;
+      margin-left: 2.5rem;
+      border-radius: 1rem 0 0 1rem;
+      color: #66FCF1;
+      z-index: 10;
+      transition: 300ms;
+
+      &:hover {
+        background-color: #1E262F;
+      }
+
+      &:before {
+        content: "<";
+        color: #66FCF1;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+
+    .slick-next {
+      background-color: transparent;
+      border: .125rem solid #45A29E;
+      height: 100%;
+      width: 4rem;
+      margin-right: 2.5rem;
+      border-radius: 0 1rem 1rem 0;
+      color: #66FCF1;
+      z-index: 10;
+      transition: 300ms;
+
+      &:hover {
+        background-color: #1E262F;
+      }
+
+      &:before {
+        content: ">";
+        color: #66FCF1;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+
+    .slick-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .match-card {
+
+    background-color: #1E262F;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    border: .0625rem solid #66FCF1;
+    border-radius: 1rem;
+
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: box-shadow 0.2s ease-in-out;
+    &:hover {
+      box-shadow: 0 .375rem 7.5rem rgba(69, 162, 158, 20); 
+    }
+
+
+    .team-logo {
+      width: 5rem;
+      height: 5rem;
+      flex-shrink: 0;
+      border-radius: 1.25rem;
+      border: .0625rem solid #66FCF1;
+      border-radius: 1rem;
+    }
+
+    .time {
+      background-color: #0B0C10;
+      color: #66FCF1;
+      padding: 0.1rem 1rem;
+      font-size: 1.2rem;
+      border: .0625rem solid #45A29E;
+      border-radius: 0.625rem;
+    }
+  }
+}
