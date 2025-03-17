@@ -5,22 +5,8 @@ import { navi, faze, furia, g2, liquid, heroic, newsBg, Zywoo, m0NESY, donk, tom
 import NewsSlider from "../../components/NewsSlider/NewsSlider";
 import PlayerList from "../../components/PlayerList/PlayerList";
 import CommandsList from "../../components/CommandsList/CommandsList";
-import { useEffect } from "react";
-import { useState } from "react";
-
-const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-console.log(import.meta.env);
-
-const fetchTournaments = async () => {
-  try {
-    const tournamentsList = await fetch(`${VITE_BACKEND_URL}/api/TournamentsLists/game/dota2`).then((res) => res.json());
-    
-    return tournamentsList
-  } catch (error) {
-    console.error(error);
-    return []
-  }
-}
+import { fetchTournaments, fetchMatches } from "../../components/api";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const matches = [
@@ -60,29 +46,25 @@ const Home = () => {
     { name: "The MongolZ", icon: mongolz },
     { name: "Astralis", icon: astralis },
   ]
-  const [stateTournaments, setStateTournaments] = useState([{
-    "tournamentId": 14899, "tournamentName": "World Cyber Games 2011 China Finals",
-    "organizer": { "organizer1": "World Cyber Games" }, "startDate": "2011-08-02T00:00:00", "endDate": "2011-08-03T00:00:00",
-    "location": { "country1": "cn", "city1": "Shanghai", "region1": "China" }, "prizePool": 5455.99, "tournamentGame": "dota",
-    "tournamentDate": null, "tournamentResults": []
-  }, {
-    "tournamentId": 14890, "tournamentName": "World Cyber Games 2009 China Finals",
-    "organizer": { "organizer1": "World Cyber Games" }, "startDate": "2012-09-02T00:00:00", "endDate": "2012-09-03T00:00:00",
-    "location": { "country1": "cn", "city1": "Shanghai", "region1": "China" }, "prizePool": 81723, "tournamentGame": "dota",
-    "tournamentDate": null, "tournamentResults": []
-  },
-  { "tournamentId": 14900, "tournamentName": "WCG Asian Championship 2010", "organizer": { "organizer1": "World Cyber Games" }, "startDate": "2010-07-09T00:00:00", "endDate": "2010-07-11T00:00:00", "location": { "country1": "sg", "city1": "Singapore", "region1": "Southeast Asia" }, "prizePool": 6519.02, "tournamentGame": "dota", "tournamentDate": null, "tournamentResults": [] }, { "tournamentId": 14901, "tournamentName": "CCT Series 7", "organizer": { "organizer2": "GRID", "organizer1": "GAM3RS X" }, "startDate": "2025-02-25T00:00:00", "endDate": "2025-03-07T00:00:00", "location": { "region1": "Europe", "region2": "CIS" }, "prizePool": 50000, "tournamentGame": "dota2", "tournamentDate": null, "tournamentResults": [] }, { "tournamentId": 14902, "tournamentName": "Universal League Season 2", "organizer": { "organizer1": "Nitro Studios" }, "startDate": "2025-02-27T00:00:00", "endDate": "2025-03-15T00:00:00", "location": { "region1": "South America" }, "prizePool": 10000, "tournamentGame": "dota2", "tournamentDate": null, "tournamentResults": [] }, { "tournamentId": 14903, "tournamentName": "ACL X ESL Challenger China", "organizer": { "organizer2": "ESL Gaming", "organizer1": "Hero Esports" }, "startDate": "2025-05-01T00:00:00", "endDate": "2025-05-03T00:00:00", "location": { "country1": "cn", "city1": "Shanghai", "region1": "China" }, "prizePool": 100000, "tournamentGame": "dota2", "tournamentDate": null, "tournamentResults": [] }])
+  const [stateTournaments, setStateTournaments] = useState([])
+  const [stateMatches, setStateMatches] = useState([]);
 
   useEffect(() => {
-    // const tournamentsData = fetchTournaments()
-    // setStateTournaments(tournamentsData)
-  }, [])
-
+    const getData = async () => {
+      const tournamentsData = await fetchTournaments();
+      const matchesData = await fetchMatches();
+      setStateTournaments(tournamentsData);
+      setStateMatches(matchesData);
+    };
+  
+    getData();
+  }, []);
+  
 
 
   return (
     <div className="home container">
-      <div className="matches-widget"><MatchesToday matches={matches} /></div>
+      <div className="matches-widget"><MatchesToday matches={stateMatches} /></div>
       <div className="news-widget"><NewsSlider newsSlides={newsSlides} /></div>
       <div className="players-widget"><PlayerList players={players} /></div>
       <div className="tournaments"><Tournaments tournaments={stateTournaments} /></div>
