@@ -66,7 +66,7 @@ const Home = () => {
     "location": { "country1": "cn", "city1": "Shanghai", "region1": "China" }, "prizePool": 5455.99, "tournamentGame": "dota",
     "tournamentDate": null, "tournamentResults": []
   }, {
-    "tournamentId": 14890, "tournamentName": "param pam pam",
+    "tournamentId": 14890, "tournamentName": "World Cyber Games 2009 China Finals",
     "organizer": { "organizer1": "World Cyber Games" }, "startDate": "2012-09-02T00:00:00", "endDate": "2012-09-03T00:00:00",
     "location": { "country1": "cn", "city1": "Shanghai", "region1": "China" }, "prizePool": 81723, "tournamentGame": "dota",
     "tournamentDate": null, "tournamentResults": []
