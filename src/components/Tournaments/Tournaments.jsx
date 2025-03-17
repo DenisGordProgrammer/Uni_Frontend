@@ -11,13 +11,16 @@ const Tournaments = ({ tournaments }) => {
     (a, b) => new Date(a.startDate) - new Date(b.startDate)
   );
 
+  const formatPrize = (prize) => {
+    return prize ? `$${Math.ceil(prize).toLocaleString('en-US')}` : 'N/A';
+  };
+
   return (
     <section className="upcoming-tournaments">
       <h2>Майбутні турніри</h2>
       <ul>
       {sortedTournaments.map((tournament, index) => {
           const formattedPrize = Math.ceil(tournament.prizePool).toLocaleString('en-US');
-
           return (
             <li key={index}>
               <a href='/tournaments' className="tournament">
