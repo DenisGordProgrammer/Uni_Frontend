@@ -12,16 +12,9 @@ const MatchesToday = () => {
     const getMatches = async () => {
       const matchesData = await fetchMatches();
 
-
-      // const yesterday = new Date();
-      // yesterday.setDate(yesterday.getDate() - 5);//для 17.03.2025
-      
-      // const yesterdayString = yesterday.toISOString().split("T")[0];
-
-  
       const filteredMatches = matchesData.filter(match => {
         const matchDate = match.date.split(" ")[0]; 
-        return matchDate === "2025-03-13";//yesterdayString
+        return matchDate === "2025-03-13";
       });
 
        
@@ -29,8 +22,6 @@ const MatchesToday = () => {
         return new Date(a.date) - new Date(b.date);
       });
       
-
-      console.log("Отфильтрованные матчи:", filteredMatches);
       setMatches(filteredMatches);
     };
 
