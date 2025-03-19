@@ -22,13 +22,13 @@ const Tournaments = ({ tournaments }) => {
               <a href='/tournaments' className="tournament">
               <span>{formatDate(tournament.startDate)} - {formatDate(tournament.endDate)}</span>
               <img 
-                src={navi || ''} 
-                alt={tournament.tournamentName && navi || 'No logo'} 
+                src={tournament.tournamentIcon || ''} 
+                alt={tournament.tournamentName || 'No logo'} 
                 className="tournament-logo" 
               />
               <span>{tournament.tournamentName || 'No name'}</span>
               <span>${formattedPrize || 'N/A'}</span>
-              <span>Команд: {tournament.teams || 'N/A'}</span>
+              <span>Команд: {tournament.participantsNumber || 'N/A'}</span>
               </a>
             </li>
           );

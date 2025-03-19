@@ -1,8 +1,8 @@
 import "./Tournaments.scss";
 import { useEffect, useState } from "react";
 import { fetchTournaments } from "../../components/api";
-import SearchBar from "../../components/SearchBar";
-import TournamentCard from "../../components/TournamentCard";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import TournamentCard from "../../components/TournamentCard/TournamentCard";
 
 
 const TournamentsPage = () => {
