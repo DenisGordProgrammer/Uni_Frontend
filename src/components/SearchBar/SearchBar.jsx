@@ -1,3 +1,4 @@
+import "./SearchBar.scss"
 const SearchBar = ({ value, onChange  }) => {
     return (
         <div className="search-container">

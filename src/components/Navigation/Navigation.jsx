@@ -23,8 +23,8 @@ const Navigation = () => {
           <NavLink to="/players" className={({ isActive }) => cn({ "active-link": isActive })}>
             Гравці
           </NavLink>
-          <NavLink to="/rating" className={({ isActive }) => cn({ "active-link": isActive })}>
-            Рейтинг
+          <NavLink to="/matches" className={({ isActive }) => cn({ "active-link": isActive })}>
+            Матчі
           </NavLink>
         </nav>
         <NavLink to="/login" className={({ isActive }) => cn({ "active-link": isActive })}>

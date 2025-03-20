@@ -5,18 +5,10 @@ import { navi, faze, furia, g2, liquid, heroic, newsBg, Zywoo, m0NESY, donk, tom
 import NewsSlider from "../../components/NewsSlider/NewsSlider";
 import PlayerList from "../../components/PlayerList/PlayerList";
 import CommandsList from "../../components/CommandsList/CommandsList";
-import { fetchTournaments, fetchMatches } from "../../components/api";
+import { fetchTournaments, fetchMatches, fetchTeams } from "../../components/api";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-  const matches = [
-    { team1: "NAVI", team2: "Faze", time: "8:00", logo1: navi, logo2: faze },
-    { team1: "Furia", team2: "G2", time: "10:00", logo1: furia, logo2: g2 },
-    { team1: "Liquid", team2: "Heroic", time: "12:00", logo1: liquid, logo2: heroic },
-    { team1: "NAVI", team2: "Faze", time: "14:00", logo1: navi, logo2: faze },
-    { team1: "Furia", team2: "G2", time: "16:00", logo1: furia, logo2: g2 },
-    { team1: "Liquid", team2: "Heroic", time: "18:00", logo1: liquid, logo2: heroic },
-  ];
 
   const newsSlides = [
     { from: "hltv.org", bg: newsBg, title: "Device пропусте мейджор зза проблем зі здоров'ям", text: "На цьому мейджорі замість Device буде грати bro, замість нього зіграє Каспер Меллер" },
@@ -48,11 +40,16 @@ const Home = () => {
   ]
   const [stateTournaments, setStateTournaments] = useState([])
   const [stateMatches, setStateMatches] = useState([]);
+  const [stateTeams, setStateTeams] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       const tournamentsData = await fetchTournaments();
+      
       const matchesData = await fetchMatches();
+      const teamsData = await fetchTeams();
+      console.log(teamsData)
+      setStateTeams(teamsData);
       setStateTournaments(tournamentsData);
       setStateMatches(matchesData);
     };
@@ -68,7 +65,7 @@ const Home = () => {
       <div className="news-widget"><NewsSlider newsSlides={newsSlides} /></div>
       <div className="players-widget"><PlayerList players={players} /></div>
       <div className="tournaments"><Tournaments tournaments={stateTournaments} /></div>
-      <div className="commands-widget"><CommandsList commands={commands} /></div>
+      <div className="commands-widget"><CommandsList commands={stateTeams} /></div>
     </div>
   );
 };

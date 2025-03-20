@@ -1,15 +1,31 @@
+import { useEffect, useState } from "react";
 import "./CommandsList.scss";
+import { fetchTeams } from "../api";
 
-const CommandsList = ({ commands }) => {
+const CommandsList = () => {
+    const [stateTeams, setStateTeams] = useState([]);
+
+    useEffect(() => {
+        const getTeams = async () => {
+            const teamsData = await fetchTeams();
+
+            const sortedTeams = teamsData.sort((a, b) => b.teamEarnings - a.teamEarnings);
+            
+            setStateTeams(sortedTeams.slice(0, 10));
+        };
+
+        getTeams();
+    }, []);
+
     return (
         <div className="commands-list">
             <h2 className="title">Топ команд</h2>
             <div className="content">
-                {commands.map((command, index) => (
-                    <div className="commands-row" key={command.name}>
+                {stateTeams.map((team, index) => (
+                    <div className="commands-row" key={team.teamName}>
                         <div className="commands-info">
-                            <span>#{index +1}. {command.name}</span>
-                            <img src={command.icon} className="icon" />
+                            <span>#{index + 1}. {team.teamName} (${team.teamEarnings.toLocaleString()})</span>
+                            <img src={team.teamLogo} className="icon" alt={team.teamName} />
                         </div>
                     </div>
                 ))}

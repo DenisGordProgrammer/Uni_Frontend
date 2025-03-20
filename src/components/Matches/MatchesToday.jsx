@@ -11,7 +11,7 @@ const MatchesToday = () => {
   useEffect(() => {
     const getMatches = async () => {
       const matchesData = await fetchMatches();
-
+      console.log(matchesData)
       const filteredMatches = matchesData.filter(match => {
         const matchDate = match.date.split(" ")[0]; 
         return matchDate === "2025-03-13";
@@ -21,7 +21,6 @@ const MatchesToday = () => {
       filteredMatches.sort((a, b) => {
         return new Date(a.date) - new Date(b.date);
       });
-      
       setMatches(filteredMatches);
     };
 
@@ -32,7 +31,7 @@ const MatchesToday = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     arrows: true,
   };
