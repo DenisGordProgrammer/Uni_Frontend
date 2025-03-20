@@ -1,0 +1,52 @@
+.player-card {
+    position: relative;
+    width: 12.5rem;
+    height: 13.75rem;
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #1F2833D9;
+    padding: .625rem;
+    border: .0625rem solid #45A29E;
+    border-radius: .625rem;
+    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+    &:hover {
+        box-shadow: 0 .375rem .75rem rgba(69, 162, 158, 0.6); 
+    }
+    &:visited {
+        color: #66FCF1;
+    }
+    .player-logo {
+        max-width: 10rem;
+        max-height: 10rem;
+        object-fit: cover;
+        border-radius: .5rem;
+    }
+
+    .player-info {
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+
+
+    li{
+        text-decoration: none;
+        a{
+            text-decoration: none !important;
+        }
+    }
+
+    .player-name,.player-nickname {
+        font-size: .875rem;
+        font-weight: bold;
+        color: #66FCF1;
+        text-align: center;
+        text-decoration: none;
+    }
+}

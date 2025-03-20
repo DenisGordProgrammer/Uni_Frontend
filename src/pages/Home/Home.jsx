@@ -5,7 +5,7 @@ import { navi, faze, furia, g2, liquid, heroic, newsBg, Zywoo, m0NESY, donk, tom
 import NewsSlider from "../../components/NewsSlider/NewsSlider";
 import PlayerList from "../../components/PlayerList/PlayerList";
 import CommandsList from "../../components/CommandsList/CommandsList";
-import { fetchTournaments, fetchMatches, fetchTeams } from "../../components/api";
+import { fetchTournaments, fetchMatches, fetchTeams, fetchPlayers } from "../../components/api";
 import { useEffect, useState } from "react";
 
 const Home = () => {
@@ -41,6 +41,7 @@ const Home = () => {
   const [stateTournaments, setStateTournaments] = useState([])
   const [stateMatches, setStateMatches] = useState([]);
   const [stateTeams, setStateTeams] = useState([]);
+  const [statePlayers, setstatePlayers] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -48,10 +49,11 @@ const Home = () => {
       
       const matchesData = await fetchMatches();
       const teamsData = await fetchTeams();
-      console.log(teamsData)
+      const playersData = await fetchPlayers();
       setStateTeams(teamsData);
       setStateTournaments(tournamentsData);
       setStateMatches(matchesData);
+      setstatePlayers(playersData);
     };
   
     getData();
@@ -63,7 +65,7 @@ const Home = () => {
     <div className="home container">
       <div className="matches-widget"><MatchesToday matches={stateMatches} /></div>
       <div className="news-widget"><NewsSlider newsSlides={newsSlides} /></div>
-      <div className="players-widget"><PlayerList players={players} /></div>
+      <div className="players-widget"><PlayerList players={statePlayers} /></div>
       <div className="tournaments"><Tournaments tournaments={stateTournaments} /></div>
       <div className="commands-widget"><CommandsList commands={stateTeams} /></div>
     </div>
