@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import Tournaments from "./pages/Tournaments/Tournaments";
 import Teams from "./pages/Teams/Teams";
 import Players from "./pages/Players/Players";
+import Matches from "./pages/Matches/Matches";
 import './App.scss';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/tournaments" element={<Tournaments />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/players" element={<Players />} />
+        <Route path="/matches" element={<Matches />} />
       </Routes>
       <Footer />
     </Router>

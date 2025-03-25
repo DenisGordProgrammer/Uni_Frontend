@@ -1,0 +1,18 @@
+.match-date {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #66FCF1;
+    margin-bottom: .9375rem;
+    margin-top: 3.75rem;
+    margin-left: .9375rem;
+}
+
+.match-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+    padding: 2rem;
+    background-color: #0B0C10;
+    border: .0625rem solid #66FCF1;
+}
+
