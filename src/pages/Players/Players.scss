@@ -1,0 +1,39 @@
+.playersPage {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.page-players {
+    background-color: #0B0C10;
+    border: .0625rem solid #45A29E;
+    color: #66FCF1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        text-decoration: none;
+        justify-content: center;
+        margin: 1.25rem 1.25rem 1.25rem 1.25rem;
+        max-height: 44em; 
+        overflow-y: auto; 
+        scrollbar-width: thin;  
+        scrollbar-color: #45A29E transparent; 
+    }
+
+    input{
+        width: 85%;
+    }
+
+    
+}

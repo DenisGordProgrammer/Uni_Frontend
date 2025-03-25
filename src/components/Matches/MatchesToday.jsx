@@ -11,7 +11,6 @@ const MatchesToday = () => {
   useEffect(() => {
     const getMatches = async () => {
       const matchesData = await fetchMatches();
-      console.log(matchesData)
       const filteredMatches = matchesData.filter(match => {
         const matchDate = match.date.split(" ")[0]; 
         return matchDate === "2025-03-13";
