@@ -6,7 +6,12 @@
     margin-top: 3.75rem;
     margin-left: .9375rem;
 }
-
+.matches-list{
+    max-height: 55rem; 
+    overflow-y: auto; 
+    scrollbar-width: thin;  
+    scrollbar-color: #45A29E transparent; 
+}
 .match-container {
     display: flex;
     flex-direction: column;
