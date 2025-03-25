@@ -27,26 +27,27 @@ const Matches = () => {
         return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
     };
 
+    const groupedMatches = Object.entries(
+        matches.reduce((acc, match) => {
+            const matchDate = formatDate(match.date);
+            if (!acc[matchDate]) acc[matchDate] = [];
+            acc[matchDate].push(match);
+            return acc;
+        }, {})
+    );
+
     return (
         <div className="matches-list container">
-            {matches.length > 0 &&
-                Object.entries(
-                    matches.reduce((acc, match) => {
-                        const matchDate = formatDate(match.date);
-                        if (!acc[matchDate]) acc[matchDate] = [];
-                        acc[matchDate].push(match);
-                        return acc;
-                    }, {})
-                ).map(([date, games]) => (
-                    <div key={date} className="match-day">
-                        <h2 className="match-date">{date}</h2>
-                        <div className="match-container">
-                            {games.map((match) => (
-                                <MatchesCard key={match.matchId} match={match} formatTime={formatTime} />
-                            ))}
-                        </div>
+            {groupedMatches.map(([date, games]) => (
+                <div key={date} className="match-day">
+                    <h2 className="match-date">{date}</h2>
+                    <div className="match-container">
+                        {games.map((match) => (
+                            <MatchesCard key={match.matchId} match={match} formatTime={formatTime} />
+                        ))}
                     </div>
-                ))}
+                </div>
+            ))}
         </div>
     );
 }
