@@ -16,28 +16,6 @@ const Home = () => {
     { from: "wikipedia.com", bg: newsBg, title: "Оновлення радару", text: "Додано нову опцію динамічного масштабування радара, яка збільшує чи зменшує його, щоби включати ваших товаришів по команді, бомбу та інші позначувані елементи." },
   ];
 
-  const players = [
-    { name: "Zywoo", rating: 1.39, icon: Zywoo },
-    { name: "m0NESY", rating: 1.36, icon: m0NESY },
-    { name: "donk", rating: 1.33, icon: donk },
-    { name: "tomaszin", rating: 1.30, icon: tomaszin },
-    { name: "kyosuke", rating: 1.29, icon: kyosuke },
-    { name: "INS", rating: 1.26, icon: INS },
-    { name: "Xantares", rating: 1.25, icon: Xantares },
-    { name: "malbsMd", rating: 1.23, icon: malbsMd },
-  ];
-  const commands = [
-    { name: "Natus Vincere", icon: navi },
-    { name: "G2", icon: m0NESY },
-    { name: "Vitality", icon: Zywoo },
-    { name: "Spirit", icon: donk },
-    { name: "Mouz", icon: mouz },
-    { name: "Faze", icon: faze },
-    { name: "Eternal Fire", icon: Xantares },
-    { name: "Heroic", icon: heroic },
-    { name: "The MongolZ", icon: mongolz },
-    { name: "Astralis", icon: astralis },
-  ]
   const [stateTournaments, setStateTournaments] = useState([])
   const [stateMatches, setStateMatches] = useState([]);
   const [stateTeams, setStateTeams] = useState([]);

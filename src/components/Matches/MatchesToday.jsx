@@ -1,5 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { NavLink } from 'react-router-dom';
 import Slider from "react-slick";
 import "./MatchesToday.scss";
 import { fetchMatches } from "../api";
@@ -11,6 +12,7 @@ const MatchesToday = () => {
   useEffect(() => {
     const getMatches = async () => {
       const matchesData = await fetchMatches();
+      console.log(matchesData);
       const filteredMatches = matchesData.filter(match => {
         const matchDate = match.date.split(" ")[0]; 
         return matchDate === "2025-03-13";
@@ -47,14 +49,13 @@ const MatchesToday = () => {
       <div className="slider">
         <Slider {...settings}>
           {matches.map((match) => (
-             <a href={`/${match.matchPageId}`} key={match.matchId}>
-              <div className="match-card">
-                <img src={match.opponent1Icon} alt={match.opponent1Name} className="team-logo" />
-                <div className="time">{formatTime(match.date)}</div>
-                {/* <div className="time">{(match.date)}</div> раскомент для проверки даты */}
-                <img src={match.opponent2Icon} alt={match.opponent2Name} className="team-logo" />
-              </div>
-            </a>
+             <NavLink to={`/${match.matchPageId}`} key={match.matchId}>
+             <div className="match-card">
+               <img src={match.opponents[0].opponentIcon} alt={match.opponents[0].opponentName} className="team-logo" />
+               <div className="time">{formatTime(match.date)}</div>
+               <img src={match.opponents[1].opponentIcon} alt={match.opponents[1].opponentName} className="team-logo" />
+             </div>
+           </NavLink>
           ))}
         </Slider>
       </div>
