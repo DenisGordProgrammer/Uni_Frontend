@@ -1,15 +1,17 @@
-import "./TeamsCard.scss"
+import "./TeamsCard.scss";
+import { NavLink } from "react-router-dom";
 
 const TeamsCard = ({ team }) => {
     return (
         <li key={team.teamId}>
-            <a href={`/${team.teamName}`} className="page-team">
+            <NavLink to={`/${team.teamName}`} className="page-team">
                 <div key={team.teamId} className="team-card">
                     <img src={team.teamLogo} alt={team.teamName} className="team-logo" />
                     <span className="team-name">{team.teamName}</span>
                 </div>
-            </a>
+            </NavLink>
         </li>
     );
 };
+
 export default TeamsCard;

@@ -1,7 +1,7 @@
 import "./PlayerList.scss";
 import { useEffect, useState } from "react";
 import { fetchPlayers, fetchTeams } from "../api";
-import navi from "../../assets/images/naviLogo.png"
+import team_logo from "../../assets/images/Team.png"
 
 const PlayerList = () => {
     const [statePlayers, setstatePlayers] = useState([]);
@@ -25,13 +25,13 @@ const PlayerList = () => {
     }, []);
 
     const getTeamLogo = (playerTeam) => {
-        if (!playerTeam) return navi; 
+        if (!playerTeam) return team_logo; 
     
         const formattedPlayerTeam = playerTeam.replace(/_/g, " ").toLowerCase();
     
         const team = stateTeams.find(t => t.teamName.toLowerCase() === formattedPlayerTeam);
         
-        return team ? team.teamLogo : navi;
+        return team ? team.teamLogo : team_logo;
     };
     
     return (
