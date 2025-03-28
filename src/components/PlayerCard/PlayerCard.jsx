@@ -1,0 +1,29 @@
+import "./PlayerCard.scss"
+import team_logo from "../../assets/images/Team.png";
+import player_logo from "../../assets/images/Player.png";
+
+const PlayerCard = ({ player, team }) => {
+    return (
+        <div className="profile-card">
+            <img src={player_logo} alt={player.plName} />
+            <div className="profile-info">
+                <h2>{player.plName}</h2>
+                <p>Нікнейм: {player.plNickname}</p>
+                <p>Вік: {player.plAge}</p>
+                <p>Батьківщина: {player.plNationality}</p>
+                <p>
+                    Команда: {player.plTeam ? (
+                        <>
+                            {player.plTeam.replace(/_/g, " ")}
+                            <img src={team ? team.teamLogo : team_logo} alt="Team Logo" className="team-logo" />
+                        </>
+                    ) : "Без команди"}
+                </p>
+                <p>Earnings: ${player.plEarnings.toLocaleString()}</p>
+                <span className="main-source">Taken from liquipedia.net</span>
+            </div>
+        </div>
+    );
+};
+
+export default PlayerCard;

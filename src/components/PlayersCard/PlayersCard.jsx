@@ -9,7 +9,7 @@ const PlayersCard = ({ player }) => {
     
     return (
         <li key={player.playerId}>
-            <NavLink to={`/${player.plNickname}`} className="page-player">
+            <NavLink to={`/players/${player.playerId}`} className="page-player">
                 <div key={player.playerId} className="player-card">
                     <img src={player_logo} alt={player.plName} className="player-logo" />
                     <div className="player-info">
