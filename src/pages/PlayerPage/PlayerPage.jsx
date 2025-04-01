@@ -19,6 +19,7 @@ const PlayerPage = () => {
     const [player, setPlayer] = useState(null);
     const [team, setTeam] = useState(null);
     const [stats, setStats] = useState(getRandomStats());
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getPlayerAndTeam = async () => {
@@ -33,7 +34,9 @@ const PlayerPage = () => {
                     setTeam(foundTeam);
                 }
             } catch (error) {
-                console.error("Ошибка загрузки данных:", error);
+                console.error("Помилка завантаження даних:", error);
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -41,14 +44,13 @@ const PlayerPage = () => {
         setStats(getRandomStats());
     }, [id]);
 
-    if (!player) return <p>Loading...</p>;
+    if (loading) return <p className="container">Loading...</p>;
+    if (!player) return <p className="container">Гравця не знайдено.</p>;
 
     return (
         <div className="player-profile container">
             <PlayerCard player={player} team={team} />
-
             <PlayerStats stats={stats} />
-
             <NavLink to="/players" className="back-link">← Назад до списку</NavLink>
         </div>
     );
