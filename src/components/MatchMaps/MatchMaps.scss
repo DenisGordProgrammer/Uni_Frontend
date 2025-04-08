@@ -1,0 +1,23 @@
+.match-page-maps {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    background: #000000;
+    padding: 3.125rem;
+    border: .0625rem solid #66FCF1;
+    border-radius: .3125rem;
+
+    .match-map-logo {
+        max-width: 21.875rem;
+        max-height: 15.625rem;
+    }
+
+    .match-map-card {
+        background: #0B0C10;
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-align: center;
+        color: #66FCF1;
+        border: .0625rem solid #66FCF1;
+    }
+}

@@ -7,6 +7,7 @@ import Teams from "./pages/Teams/Teams";
 import Players from "./pages/Players/Players";
 import PlayerPage from "./pages/PlayerPage/PlayerPage"
 import Matches from "./pages/Matches/Matches";
+import MatchPage from "./pages/MatchPage/MatchPage"
 import './App.scss';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/players" element={<Players />} />
         <Route path="/players/:id" element={<PlayerPage />} />
         <Route path="/matches" element={<Matches />} />
+        <Route path="/matches/:id" element={<MatchPage />} />
       </Routes>
       <Footer />
     </Router>

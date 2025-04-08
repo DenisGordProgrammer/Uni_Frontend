@@ -3,13 +3,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: #0B0C10;
-    border: 1px solid #66FCF1;
+    border: .0625rem solid #66FCF1;
     padding: 1.5rem;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     width: 100%;
-    max-width: 600px;
+    max-width: 37.5rem;
     gap: 1rem;
-    min-height: 150px;
+    min-height: 9.375rem;
     
 
     span {
@@ -35,8 +35,8 @@
     .add-source {
         position: absolute;
         color: #66FCF1;
-        bottom: 0px;
-        right: 10px;
+        bottom: 0rem;
+        right: .625rem;
         font-size: 0.8rem;
     }
 }

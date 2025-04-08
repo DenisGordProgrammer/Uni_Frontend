@@ -1,0 +1,55 @@
+.match-page-players {
+    background-color: #000000;
+    border: .0625rem solid #66FCF1;
+    border-radius: .3125rem;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #66FCF1;
+
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: .9375rem;
+    }
+
+    img {
+        width: 2.4375rem;
+        height: 2.4375rem;
+        object-fit: contain;
+    }
+
+    .match-teams-players {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.25rem;
+    }
+
+    .match-page-player {
+        background-color: transparent;
+        padding: .9375rem;
+        border-radius: .5rem;
+        flex: 1;
+         min-width: 31.25rem;
+         width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        p {
+            background-color: #0B0C10;
+            border: .0625rem solid #66FCF1;
+            border-radius: .9375rem;
+            padding: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 3.125rem;
+            margin: .3125rem 0;
+            text-align: center;
+            font-weight: 400;
+            font-size: 2rem;
+        }
+    }
+}
