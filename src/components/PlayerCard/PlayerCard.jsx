@@ -1,11 +1,11 @@
 import "./PlayerCard.scss"
-import team_logo from "../../assets/images/Team.png";
-import player_logo from "../../assets/images/Player.png";
+import teamLogo from "../../assets/images/Team.png";
+import playerLogo from "../../assets/images/Player.png";
 
 const PlayerCard = ({ player, team }) => {
     return (
         <div className="profile-card">
-            <img src={player_logo} alt={player.plName} />
+            <img src={playerLogo} alt={player.plName} />
             <div className="profile-info">
                 <h2>{player.plName}</h2>
                 <p>Нікнейм: {player.plNickname}</p>
@@ -15,7 +15,7 @@ const PlayerCard = ({ player, team }) => {
                     Команда: {player.plTeam ? (
                         <>
                             {player.plTeam.replace(/_/g, " ")}
-                            <img src={team ? team.teamLogo : team_logo} alt="Team Logo" className="team-logo" />
+                            <img src={team ? team.teamLogo : teamLogo} alt="Team Logo" className="team-logo" />
                         </>
                     ) : "Без команди"}
                 </p>

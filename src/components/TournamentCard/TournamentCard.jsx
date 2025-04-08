@@ -1,7 +1,8 @@
 import "./TournamentCard.scss";
 import { NavLink } from "react-router-dom";
+import { formatDate } from "../dateUtils";
 
-const TournamentCard = ({ tournament, formatDate }) => {
+const TournamentCard = ({ tournament }) => {
     const formattedPrize = Math.ceil(tournament.prizePool).toLocaleString('en-US');
 
     return (

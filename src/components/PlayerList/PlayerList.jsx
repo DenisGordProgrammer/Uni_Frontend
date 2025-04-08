@@ -1,44 +1,44 @@
 import "./PlayerList.scss";
 import { useEffect, useState } from "react";
 import { fetchPlayers, fetchTeams } from "../api";
-import team_logo from "../../assets/images/Team.png"
+import teamLogo from "../../assets/images/Team.png"
 
 const PlayerList = () => {
-    const [statePlayers, setstatePlayers] = useState([]);
-    const [stateTeams, setStateTeams] = useState([]);
+    const [players, setPlayers] = useState([]);
+    const [teams, setTeams] = useState([]);
 
     useEffect(() => {
-       
-        const getPlayersAndTeams = async () => {
-            try{
-            const [playersData, teamsData] = await Promise.all([fetchPlayers(), fetchTeams()]);
 
-            const sortedPlayers = playersData.sort((a, b) => b.plEarnings - a.plEarnings);
-            setStateTeams(teamsData);
-            setstatePlayers(sortedPlayers.slice(0, 10));
-        } catch (error) {
-            console.error("Помилка завантаження:", error);
-        }
+        const getPlayersAndTeams = async () => {
+            try {
+                const [playersData, teamsData] = await Promise.all([fetchPlayers(), fetchTeams()]);
+
+                const sortedPlayers = playersData.sort((a, b) => b.plEarnings - a.plEarnings);
+                setTeams(teamsData);
+                setPlayers(sortedPlayers.slice(0, 10));
+            } catch (error) {
+                console.error("Помилка завантаження:", error);
+            }
         };
 
         getPlayersAndTeams();
     }, []);
 
     const getTeamLogo = (playerTeam) => {
-        if (!playerTeam) return team_logo; 
-    
+        if (!playerTeam) return teamLogo;
+
         const formattedPlayerTeam = playerTeam.replace(/_/g, " ").toLowerCase();
-    
-        const team = stateTeams.find(t => t.teamName.toLowerCase() === formattedPlayerTeam);
-        
-        return team ? team.teamLogo : team_logo;
+
+        const team = teams.find(t => t.teamName.toLowerCase() === formattedPlayerTeam);
+
+        return team ? team.teamLogo : teamLogo;
     };
-    
+
     return (
         <div className="players-list">
             <h2 className="title">Топ Гравців</h2>
             <div className="content">
-                {statePlayers.map((player, index) => (
+                {players.map((player, index) => (
                     <div className="player-row" key={player.playerId}>
                         <div className="player-info">
                             <span>#{index + 1}. {player.plNickname}</span>

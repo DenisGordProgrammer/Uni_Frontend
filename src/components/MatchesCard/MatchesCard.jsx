@@ -1,7 +1,8 @@
 import "./MatchesCard.scss";
 import { NavLink } from 'react-router-dom';
+import { formatTime } from "../dateUtils";
 
-const MatchesCard = ({ match, formatTime }) => {
+const MatchesCard = ({ match }) => {
     return (
         <div className="match-page-card">
             <NavLink to={`/matches/${match.matchPageId}`} className="match-info">

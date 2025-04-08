@@ -6,20 +6,20 @@ import TeamsCard from "../../components/TeamsCard/TeamsCard";
 
 
 const TeamsPage = () => {
-    const [stateTeams, setStateTeams] = useState([]);
+    const [teams, setTeams] = useState([]);
     
     const [value, onChange ] = useState("");
 
     useEffect(() => {
         const getTeams = async () => {
           const teamsData = await fetchTeams();
-          setStateTeams(teamsData);
+          setTeams(teamsData);
         };
     
         getTeams();
       }, []);
 
-    const filteredTeams = stateTeams
+    const filteredTeams = teams
         .filter(team =>
             team.teamName.toLowerCase().includes(value.toLowerCase())
         )
