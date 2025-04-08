@@ -6,20 +6,20 @@ import PlayersCard from "../../components/PlayersCard/PlayersCard";
 
 
 const PlayersPage = () => {
-    const [statePlayers, setstatePlayers] = useState([]);
+    const [players, setPlayers] = useState([]);
     
     const [value, onChange ] = useState("");
 
     useEffect(() => {
         const getPlayers = async () => {
           const playersData = await fetchPlayers();
-          setstatePlayers(playersData);
+          setPlayers(playersData);
         };
     
         getPlayers();
       }, []);
 
-    const filteredPlayers = statePlayers
+    const filteredPlayers = players
         .filter(player =>
             player.plNickname.toLowerCase().includes(value.toLowerCase())
         )

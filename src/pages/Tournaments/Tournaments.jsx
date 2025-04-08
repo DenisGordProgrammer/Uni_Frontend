@@ -3,28 +3,23 @@ import { useEffect, useState } from "react";
 import { fetchTournaments } from "../../components/api";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import TournamentCard from "../../components/TournamentCard/TournamentCard";
-
+import { formatDate } from "../../components/dateUtils";
 
 const TournamentsPage = () => {
-    const [stateTournaments, setStateTournaments] = useState([]);
+    const [tournaments, setTournaments] = useState([]);
     
     const [value, onChange ] = useState("");
-
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('uk-UA', { day: '2-digit', month: '2-digit' });
-    };
 
     useEffect(() => {
         const getTournaments = async () => {
           const tournamentsData = await fetchTournaments();
-          setStateTournaments(tournamentsData);
+          setTournaments(tournamentsData);
         };
     
         getTournaments();
       }, []);
 
-    const filteredTournaments = stateTournaments
+    const filteredTournaments = tournaments
         .filter(tournament =>
             tournament.tournamentName.toLowerCase().includes(value.toLowerCase())
         )

@@ -1,6 +1,6 @@
 import "./PlayersCard.scss";
 import { NavLink } from "react-router-dom";
-import player_logo from "../../assets/images/Player.png";
+import playerLogo from "../../assets/images/Player.png";
 
 const PlayersCard = ({ player }) => {
     const nameParts = player.plName.split(" ");
@@ -11,7 +11,7 @@ const PlayersCard = ({ player }) => {
         <li key={player.playerId}>
             <NavLink to={`/players/${player.playerId}`} className="page-player">
                 <div key={player.playerId} className="player-card">
-                    <img src={player_logo} alt={player.plName} className="player-logo" />
+                    <img src={playerLogo} alt={player.plName} className="player-logo" />
                     <div className="player-info">
                         <span className="player-name">{firstName}</span>
                         <span className="player-nickname">&nbsp;{player.plNickname}&nbsp;</span>
