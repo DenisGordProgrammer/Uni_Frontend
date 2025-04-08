@@ -11,7 +11,7 @@ export const fetchTournaments = async () => {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error("Помилка завантаження:", error);
+      console.error("Помилка завантаження турнірів:", error);
       return []; 
     }
 };
@@ -41,7 +41,7 @@ export const fetchTeams = async () => {
 
       return await response.json();
   } catch (error) {
-      console.error("Помилка завантаження матчів:", error);
+      console.error("Помилка завантаження команд:", error);
       return [];
   }
 };
@@ -56,7 +56,7 @@ export const fetchPlayers = async () => {
 
       return await response.json();
   } catch (error) {
-      console.error("Помилка завантаження матчів:", error);
+      console.error("Помилка завантаження гравців:", error);
       return [];
   }
 };

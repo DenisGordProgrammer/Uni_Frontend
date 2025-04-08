@@ -3,7 +3,7 @@ import "./CommandsList.scss";
 import { fetchTeams } from "../api";
 
 const CommandsList = () => {
-    const [stateTeams, setStateTeams] = useState([]);
+    const [teams, setTeams] = useState([]);
 
     useEffect(() => {
         const getTeams = async () => {
@@ -11,7 +11,7 @@ const CommandsList = () => {
 
             const sortedTeams = teamsData.sort((a, b) => b.teamEarnings - a.teamEarnings);
             
-            setStateTeams(sortedTeams.slice(0, 10));
+            setTeams(sortedTeams.slice(0, 10));
         };
 
         getTeams();
@@ -21,7 +21,7 @@ const CommandsList = () => {
         <div className="commands-list">
             <h2 className="title">Топ команд</h2>
             <div className="content">
-                {stateTeams.map((team, index) => (
+                {teams.map((team, index) => (
                     <div className="commands-row" key={team.teamName}>
                         <div className="commands-info">
                             <span>#{index + 1}. {team.teamName} (${team.teamEarnings.toLocaleString()})</span>

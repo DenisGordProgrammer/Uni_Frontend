@@ -1,0 +1,13 @@
+.player-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: #66FCF1;
+
+    .back-link {
+        margin-top: 1.5rem;
+        color: #66FCF1;
+        text-decoration: none;
+    }
+}

@@ -16,10 +16,10 @@ const Home = () => {
     { from: "wikipedia.com", bg: newsBg, title: "Оновлення радару", text: "Додано нову опцію динамічного масштабування радара, яка збільшує чи зменшує його, щоби включати ваших товаришів по команді, бомбу та інші позначувані елементи." },
   ];
 
-  const [stateTournaments, setStateTournaments] = useState([])
-  const [stateMatches, setStateMatches] = useState([]);
-  const [stateTeams, setStateTeams] = useState([]);
-  const [statePlayers, setstatePlayers] = useState([]);
+  const [tournaments, setTournaments] = useState([])
+  const [matches, setMatches] = useState([]);
+  const [teams, setTeams] = useState([]);
+  const [players, setPlayers] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -28,10 +28,10 @@ const Home = () => {
       const matchesData = await fetchMatches();
       const teamsData = await fetchTeams();
       const playersData = await fetchPlayers();
-      setStateTeams(teamsData);
-      setStateTournaments(tournamentsData);
-      setStateMatches(matchesData);
-      setstatePlayers(playersData);
+      setTeams(teamsData);
+      setTournaments(tournamentsData);
+      setMatches(matchesData);
+      setPlayers(playersData);
     };
   
     getData();
@@ -41,11 +41,11 @@ const Home = () => {
 
   return (
     <div className="home container">
-      <div className="matches-widget"><MatchesToday matches={stateMatches} /></div>
+      <div className="matches-widget"><MatchesToday matches={matches} /></div>
       <div className="news-widget"><NewsSlider newsSlides={newsSlides} /></div>
-      <div className="players-widget"><PlayerList players={statePlayers} /></div>
-      <div className="tournaments"><Tournaments tournaments={stateTournaments} /></div>
-      <div className="commands-widget"><CommandsList commands={stateTeams} /></div>
+      <div className="players-widget"><PlayerList players={players} /></div>
+      <div className="tournaments"><Tournaments tournaments={tournaments} /></div>
+      <div className="commands-widget"><CommandsList commands={teams} /></div>
     </div>
   );
 };

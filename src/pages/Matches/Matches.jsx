@@ -2,30 +2,29 @@ import "./Matches.scss";
 import { useEffect, useState } from "react";
 import { fetchMatches } from "../../components/api";
 import MatchesCard from "../../components/MatchesCard/MatchesCard";
-
+import { formatDate } from "../../components/dateUtils";
 
 const Matches = () => {
-    const [matches, setMatches] = useState([]);
+    const [matches, setMatches] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getMatches = async () => {
-            const matchesData = await fetchMatches();
-            const sortedMatches = matchesData.sort((a, b) => new Date(a.date) - new Date(b.date));
-            setMatches(sortedMatches);
+            try {
+                const matchesData = await fetchMatches();
+                const sortedMatches = matchesData.sort((a, b) => new Date(a.date) - new Date(b.date));
+                setMatches(sortedMatches);
+            } catch (error) {
+                console.error("Помилка завантаження матчів:", error);
+            } finally {
+                setLoading(false);
+            }
         };
-
         getMatches();
     }, []);
 
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString("uk-UA", { day: "2-digit", month: "2-digit", year: "numeric" });
-    };
-
-    const formatTime = (dateString) => {
-        const date = new Date(dateString);
-        return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-    };
+    if (loading) return <p className="container">Loading...</p>;
+    if (!matches || matches.length === 0) return <p className="container">Немає доступних матчів.</p>;
 
     const groupedMatches = Object.entries(
         matches.reduce((acc, match) => {
@@ -43,14 +42,13 @@ const Matches = () => {
                     <h2 className="match-date">{date}</h2>
                     <div className="match-container">
                         {games.map((match) => (
-                            <MatchesCard key={match.matchId} match={match} formatTime={formatTime} />
+                            <MatchesCard key={match.matchId} match={match} />
                         ))}
                     </div>
                 </div>
             ))}
         </div>
     );
-}
-
+};
 
 export default Matches;

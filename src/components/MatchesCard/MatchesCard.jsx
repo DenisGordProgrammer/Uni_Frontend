@@ -1,10 +1,11 @@
 import "./MatchesCard.scss";
 import { NavLink } from 'react-router-dom';
+import { formatTime } from "../dateUtils";
 
-const MatchesCard = ({ match, formatTime }) => {
+const MatchesCard = ({ match }) => {
     return (
         <div className="match-page-card">
-            <NavLink to={`/${match.matchPageId}`} className="match-info">
+            <NavLink to={`/matches/${match.matchPageId}`} className="match-info">
                 <img src={match.opponents[0].opponentIcon} alt={match.opponents[0].opponentName} className="team-page-logo" />
                 <div className="team">
                     <span className="team-name">{match.opponents[0].opponentName}</span>
