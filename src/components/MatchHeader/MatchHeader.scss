@@ -1,0 +1,49 @@
+.match-page-header {
+    background: #000000;
+    padding: 2.5rem;
+    border-radius: .625rem;
+    text-align: center;
+    color: #66FCF1;
+    border: .0625rem solid #66FCF1;
+    border-radius: .3125rem;
+
+    h2 {
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    .match-page-teams {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .match-team-name {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .match-team-logo {
+        width: 15rem;
+        height: 15rem;
+        object-fit: contain;
+        padding-right: 6.25rem;
+        padding-left: 6.25rem;
+    }
+
+    .match-page-date {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-top: 0;
+    }
+
+    .match-page-score {
+        font-size: 2rem;
+        font-weight: 400;
+        min-width: 12.5rem;
+        padding: .625rem 1.25rem;
+        border: .0625rem solid #66FCF1;
+        border-radius: 1.5625rem;
+    }
+}

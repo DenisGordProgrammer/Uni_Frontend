@@ -44,13 +44,13 @@ const MatchesToday = () => {
       <div className="slider">
         <Slider {...settings}>
           {matches.map((match) => (
-            <NavLink to={`/${match.matchPageId}`} key={match.matchId}>
-              <div className="match-card">
-                <img src={match.opponents[0].opponentIcon} alt={match.opponents[0].opponentName} className="team-logo" />
-                <div className="time">{formatTime(match.date)}</div>
-                <img src={match.opponents[1].opponentIcon} alt={match.opponents[1].opponentName} className="team-logo" />
-              </div>
-            </NavLink>
+             <NavLink to={`/matches/${match.matchId}`} key={match.matchId}>
+             <div className="match-card">
+               <img src={match.opponents[0].opponentIcon} alt={match.opponents[0].opponentName} className="team-logo" />
+               <div className="time">{formatTime(match.date)}</div>
+               <img src={match.opponents[1].opponentIcon} alt={match.opponents[1].opponentName} className="team-logo" />
+             </div>
+           </NavLink>
           ))}
         </Slider>
       </div>
