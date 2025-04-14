@@ -4,10 +4,11 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Tournaments from "./pages/Tournaments/Tournaments";
 import Teams from "./pages/Teams/Teams";
+import TeamPage from "./pages/TeamPage/TeamPage";
 import Players from "./pages/Players/Players";
 import PlayerPage from "./pages/PlayerPage/PlayerPage"
 import Matches from "./pages/Matches/Matches";
-import MatchPage from "./pages/MatchPage/MatchPage"
+import MatchPage from "./pages/MatchPage/MatchPage";
 import './App.scss';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/tournaments" element={<Tournaments />} />
         <Route path="/teams" element={<Teams />} />
+        <Route path="/teams/:id" element={<TeamPage />} />
         <Route path="/players" element={<Players />} />
         <Route path="/players/:id" element={<PlayerPage />} />
         <Route path="/matches" element={<Matches />} />
