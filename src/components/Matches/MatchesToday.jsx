@@ -15,7 +15,11 @@ const MatchesToday = () => {
       const matchesData = await fetchMatches();
       const filteredMatches = matchesData.filter(match => {
         const matchDate = match.date.split(" ")[0];
-        return matchDate === "2025-03-13";
+        const latestDate = matchesData.reduce((latest, match) => {
+          const matchDate = match.date.split(" ")[0];
+          return matchDate > latest ? matchDate : latest;
+        }, "0000-00-00");
+        return matchDate === latestDate;
       });
 
 
@@ -32,7 +36,7 @@ const MatchesToday = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: matches.length < 3 ? 2 : 3,
     slidesToScroll: 1,
     arrows: true,
   };
@@ -40,7 +44,7 @@ const MatchesToday = () => {
 
   return (
     <section className="matches-today">
-      <h2>Матчі Сьогодні</h2>
+      <h2>Останні матчі</h2>
       <div className="slider">
         <Slider {...settings}>
           {matches.map((match) => (

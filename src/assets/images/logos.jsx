@@ -16,4 +16,5 @@ import malbsMd from './g2Logo.png';
 import mouz from './mouz.jpg';
 import mongolz from './mongolz.png';
 import astralis from './astralis.jpg';
-export { navi, faze, furia, g2, liquid, heroic, newsBg, Zywoo, m0NESY, donk, tomaszin, kyosuke, INS, Xantares, malbsMd, mouz, mongolz, astralis };
+import liqupidia from './liquipedia.png';
+export { navi, faze, furia, g2, liquid, heroic, newsBg, Zywoo, m0NESY, donk, tomaszin, kyosuke, INS, Xantares, malbsMd, mouz, mongolz, astralis, liqupidia };

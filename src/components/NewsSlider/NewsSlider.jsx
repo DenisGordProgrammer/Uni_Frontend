@@ -17,7 +17,7 @@ const NewsSlider = ({ newsSlides }) => {
             <div className="slider">
                 <Slider {...settings}>
                     {newsSlides.map((slide) => (
-                        <a href="https://www.hltv.org" key={slide.title}>
+                        <a  key={slide.title}>
                             <div className="slide" style={{ backgroundImage: `url(${slide.bg})` }}>
                                 <h3>{slide.title}</h3>
                                 <p>{slide.text}</p>

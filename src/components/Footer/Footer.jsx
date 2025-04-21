@@ -3,7 +3,7 @@ import tg from '../../../src/assets/images/tgLogo.png'
 import insta from '../../../src/assets/images/instaLogo.png'
 import twitter from '../../../src/assets/images/twitLogo.png'
 import twitch from '../../../src/assets/images/twitchLogo.png'
-import hltv from '../../../src/assets/images/hltvLogo.png'
+import liquipedia from '../../../src/assets/images/liquipedia.png'
 import uesf from '../../../src/assets/images/uesfLogo.png'
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="sponsors">
           <div className="title"><p>Інформацію взято з:</p></div>
           <a href="https://www.twitch.tv/hltvorg">Twitch <img src={twitch} alt="twitch" /></a>
-          <a href="https://www.hltv.org">Hltv <img src={hltv} alt="hltw" /></a>
+          <a href="https://liquipedia.net">Liquipedia <img src={liquipedia} alt="liquipedia" /></a>
           <a href="https://uesf.org.ua">UESF <img src={uesf} alt="UESF" /></a>
         </div>
       </div>

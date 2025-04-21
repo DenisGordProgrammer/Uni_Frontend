@@ -19,7 +19,7 @@ const CommandsList = () => {
 
     return (
         <div className="commands-list">
-            <h2 className="title">Топ команд</h2>
+            <h2 className="title">Топ команд за прибутком</h2>
             <div className="content">
                 {teams.map((team, index) => (
                     <div className="commands-row" key={team.teamName}>
