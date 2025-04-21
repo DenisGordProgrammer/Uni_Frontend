@@ -10,4 +10,10 @@
         color: #66FCF1;
         text-decoration: none;
     }
+    .player-matches-list{
+        max-height: 40rem; 
+        overflow-y: auto; 
+        scrollbar-width: thin;  
+        scrollbar-color: #45A29E transparent; 
+    }
 }

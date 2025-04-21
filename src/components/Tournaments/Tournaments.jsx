@@ -9,11 +9,19 @@ const Tournaments = ({ tournaments }) => {
     (a, b) => new Date(a.startDate) - new Date(b.startDate)
   );
 
+  const upcomingTournaments = sortedTournaments.filter(
+    (tournament) => {
+      const startDate = new Date(tournament.startDate);
+      const currentYear = new Date().getFullYear();
+      return startDate > new Date() && startDate.getFullYear() <= currentYear;
+    }
+  );
+
   return (
     <section className="upcoming-tournaments">
       <h2>Майбутні турніри</h2>
       <ul>
-        {sortedTournaments.map((tournament, index) => {
+        {upcomingTournaments.map((tournament, index) => {
           const formattedPrize = Math.ceil(tournament.prizePool).toLocaleString('en-US');
           return (
             <li key={index}>

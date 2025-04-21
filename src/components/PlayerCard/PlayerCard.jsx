@@ -19,7 +19,7 @@ const PlayerCard = ({ player, team }) => {
                         </>
                     ) : "Без команди"}
                 </p>
-                <p>Earnings: ${player.plEarnings.toLocaleString()}</p>
+                <p>Заробіток: ${player.plEarnings.toLocaleString()}</p>
                 <span className="main-source">Taken from liquipedia.net</span>
             </div>
         </div>

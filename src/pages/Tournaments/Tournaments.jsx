@@ -19,13 +19,21 @@ const TournamentsPage = () => {
         getTournaments();
       }, []);
 
-    const filteredTournaments = tournaments
+    let filteredTournaments = tournaments
         .filter(tournament =>
             tournament.tournamentName.toLowerCase().includes(value.toLowerCase())
         )
 
         .sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+        const upcomingTournaments = filteredTournaments.filter(
+            (tournament) => {
+            const startDate = new Date(tournament.startDate);
+            const currentYear = new Date().getFullYear();
+            return startDate > new Date() && startDate.getFullYear() <= currentYear;
+            }
+        );
 
+        filteredTournaments = upcomingTournaments;
     return (
         <div className="tournamentsPage container">
             <section className="page-upcoming-tournaments">

@@ -14,11 +14,8 @@ const TeamCard = ({ team, teammates = [] }) => {
             <img src={team.teamLogo || teamLogo} alt="Team Logo" className="team_img" />
             <div className="profile-info">
             <h2>{team.teamName}</h2>
-                <p>Valve Ranking: {team.valveRanking}</p>
-                <p>HLTV Ranking: {team.hltvRanking}</p>
                 <p>Регіон: {team.teamRegion}</p>
                 <p>Середній вік команди: {averageAge}</p>
-                <p>Тренер: {team.teamCoach}</p>
             </div>
         </div>
     );

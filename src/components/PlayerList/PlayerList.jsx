@@ -36,7 +36,7 @@ const PlayerList = () => {
 
     return (
         <div className="players-list">
-            <h2 className="title">Топ Гравців</h2>
+            <h2 className="title">Топ гравців за прибутком</h2>
             <div className="content">
                 {players.map((player, index) => (
                     <div className="player-row" key={player.playerId}>
