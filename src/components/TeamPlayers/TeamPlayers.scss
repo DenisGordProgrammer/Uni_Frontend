@@ -1,0 +1,36 @@
+.teammates-section {
+    padding: 1.25rem;
+    display: flex;
+    justify-content: center;
+}
+
+.teammates-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    max-width: 75rem;
+    padding: 0;
+    list-style: none;
+}
+.teammates-list li {
+    width: 13.75rem; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.player-name1 {
+    font-size: .875rem;
+    font-weight: bold;
+    color: #66FCF1;
+    text-align: center;
+    display: block;
+}
+
+.player-nickname1 {
+    font-size: 1.25rem;
+    color: #66FCF1;
+    text-align: center;
+    display: block;
+}

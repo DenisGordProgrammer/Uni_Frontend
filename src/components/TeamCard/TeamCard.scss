@@ -1,0 +1,22 @@
+.profile-card1 {
+    display: flex;
+    align-items: center;
+    background-color: #0B0C10;
+    border: .0625rem solid #66FCF1;
+    padding: 1.5rem;
+    width: 100%;
+    gap: 1.875rem;
+    height: 25rem;
+    max-width: 37.5rem;
+    margin-bottom: 5rem;
+    position: relative;
+    justify-content: center;
+    .team_img {
+        width: 20rem;
+        height: auto;
+        margin-right: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+   
+}
